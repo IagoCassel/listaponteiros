@@ -3,7 +3,7 @@
 
 int main()
 {
-/*8. Considerando a declaraÁ„o int mat[4], *p, x;, quais das seguintes expressıes s„o v·lidas?
+/*8. Considerando a declara√ß√£o int mat[4], *p, x;, quais das seguintes express√µes s√£o v√°lidas?
      Justifique.
 
      p = mat + 1;
@@ -13,11 +13,11 @@ int main()
 
     R:
 
-    "p = mat + 1;" d· o endereÁo de "um pulo de um int" a partir de "&mat[0]". Logo: &mat[1].
+    "p = mat + 1;" d√° o endere√ßo de "um pulo de um int" a partir de "&mat[0]". Logo: &mat[1].
 
-    "p = mat++;" n„o È v·lida, por mat n„o ser um ponteiro.
+    "p = mat++;" n√£o √© v√°lida, por mat n√£o ser um ponteiro.
 
-    "p = ++mat;" o operador "++" antes da vari·vel "mat" n„o faz sentido.
+    "p = ++mat;" enfrenta o mesmo problema de mat++.
 
     "x = (*mat)++;" retorna o valor de "mat[0]".
 
