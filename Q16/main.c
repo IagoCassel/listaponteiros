@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /*
-16. Utilize a ideia do ponteiro para função pela função qsort() para
-    implementar sua própria função de ordenação. Para isso, sua função
-    deverá receber, entre outros argumentos, um ponteiro para a função
-    de comparação.
+16. Utilize a ideia do ponteiro para funÃ§Ã£o pela funÃ§Ã£o qsort() para
+    implementar sua prÃ³pria funÃ§Ã£o de ordenaÃ§Ã£o. Para isso, sua funÃ§Ã£o
+    deverÃ¡ receber, entre outros argumentos, um ponteiro para a funÃ§Ã£o
+    de comparaÃ§Ã£o.
 */
 
 float comparador (float *v1, float *v2){
@@ -21,7 +21,7 @@ int main(){
   scanf("%d",&n);
   printf("\n");
 
-/* Vetor v e alocação da sua memória. */
+/* Vetor v e alocaÃ§Ã£o da sua memÃ³ria. */
 
   float *v;
   v=(float*) malloc(n*sizeof(float));
@@ -40,7 +40,7 @@ int main(){
   }
   printf("\n\n");
 
-  /* Função de ordenação do vetor, usando a função de comparação usual do qsort. */
+  /* FunÃ§Ã£o de ordenaÃ§Ã£o do vetor, usando a funÃ§Ã£o de comparaÃ§Ã£o usual do qsort. */
 
   for (i=0; i<(n-1); i++){
     for (j=(i+1); j<n; j++){
@@ -57,6 +57,8 @@ int main(){
     printf("%f ", v[i]);
   }
   printf("\n\n");
-
+  
+  free(v);  
+    
 return 0;
 }
