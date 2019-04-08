@@ -5,20 +5,20 @@
 int main()
 {
     /*
-      19. Crie uma função capaz de realizar multiplicação matricial da forma C = AB.
-          A função deve receber 6 argumentos: os ponteiros para as matrizes A, B e
-          C, o número de linhas e colunas de A e o número de colunas de B (assuma que
-          o número de coluna de A é igual ao número de linhas de B). O resultado da
-          multiplicação deve ficar armazenado em C. Crie um programa para testar sua
-          implementação, capaz de utilizar a função de multiplicação e imprimir as três
-          matrizes. A função criada para multiplicação não deve realizar nenhum tipo de
-          saída de dados no terminal.
+      19. Crie uma funÃ§Ã£o capaz de realizar multiplicaÃ§Ã£o matricial da forma C = AB.
+          A funÃ§Ã£o deve receber 6 argumentos: os ponteiros para as matrizes A, B e
+          C, o nÃºmero de linhas e colunas de A e o nÃºmero de colunas de B (assuma que
+          o nÃºmero de coluna de A Ã© igual ao nÃºmero de linhas de B). O resultado da
+          multiplicaÃ§Ã£o deve ficar armazenado em C. Crie um programa para testar sua
+          implementaÃ§Ã£o, capaz de utilizar a funÃ§Ã£o de multiplicaÃ§Ã£o e imprimir as trÃªs
+          matrizes. A funÃ§Ã£o criada para multiplicaÃ§Ã£o nÃ£o deve realizar nenhum tipo de
+          saÃ­da de dados no terminal.
     */
     srand(time(NULL));
     int ** a, ** b, ** c;
     int i, j, k, nl = 3, nc = 3, nz=3;
 
-    /* Aloca memórica para as matrizes A e B */
+    /* Aloca memÃ³rica para as matrizes A e B */
     a = (int **)malloc(nl*sizeof(int *));
     a[0] = (int *)malloc(nl*nc*sizeof(int));
     for(i=1;i<nl;i++){
@@ -50,7 +50,7 @@ int main()
     }
     printf("\n");
 
-    /* Multiplica as matrizes */
+    /* Multiplica as matrizes A e B */
     c = (int **)malloc(nl*sizeof(int *));
     c[0] = (int *)malloc(nl*nz*sizeof(int));
 
@@ -68,7 +68,7 @@ int main()
         }
       }
 
-    /* Printa C */
+    /* Printa a matriz C */
     for(i=0;i<nl;i++){
       for(j=0;j<nz;j++){
         printf("%d ", c[i][j]);
