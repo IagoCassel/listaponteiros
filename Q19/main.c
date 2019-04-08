@@ -85,5 +85,12 @@ int main()
     }
     printf("\n");
 
+    free(a[0]);
+    free(a);	
+    free(b[0]);	
+    free(b);	
+    free(c[0]);	
+    free(c);	
+	
     return 0;
 }
