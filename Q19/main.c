@@ -15,10 +15,18 @@ int main()
           saída de dados no terminal.
     */
     srand(time(NULL));
-    int ** a, ** b, ** c;
-    int i, j, k, nl = 3, nc = 3, nz=3;
+    
+     /* Inicia matrizes A, B e C */
+	
+    int **a, **b, **c;
+    
+    /* 
+      nl, nc e nz são, respectivamente o número de linhas de A, colunas de A (igual as linha de B) e
+      colunas de B
+    */	
+    int i, j, k, nl=3, nc=3, nz=3;
 
-    /* Aloca memórica para as matrizes A e B */
+    /* Aloca memórica para as matrizes A, B e C */
     a = (int **)malloc(nl*sizeof(int *));
     a[0] = (int *)malloc(nl*nc*sizeof(int));
     for(i=1;i<nl;i++){
@@ -30,12 +38,19 @@ int main()
     for(i=1;i<nc;i++){
       b[i] = b[i-1]+nl;
     }
+	
+    c = (int **)malloc(nl*sizeof(int *));
+    c[0] = (int *)malloc(nl*nz*sizeof(int));
+     for(i=1;i<nl;i++){
+       c[i] = c[i-1]+nz;
+     }
 
-    /* Aleatoriza e mostra as matrizes */
+
+    /* Aleatoriza e mostra as matrizes com srand() */
     for(i=0;i<nl;i++){
       for(j=0;j<nc;j++){
         a[i][j] = rand()%10;
-        printf("%d ", a[i][j]);
+        printf("%d, ", a[i][j]);
       }
       printf("\n");
     }
@@ -44,34 +59,27 @@ int main()
     for(i=0;i<nl;i++){
       for(j=0;j<nz;j++){
         b[i][j] = rand()%10;
-        printf("%d ", b[i][j]);
+        printf("%d, ", b[i][j]);
       }
       printf("\n");
     }
     printf("\n");
 
     /* Multiplica as matrizes A e B */
-    c = (int **)malloc(nl*sizeof(int *));
-    c[0] = (int *)malloc(nl*nz*sizeof(int));
-
-     for(i=1;i<nl;i++){
-       c[i] = c[i-1]+nz;
+    for(i=0;i<nl;i++){
+      for(j=0;j<nz;j++){
+        int v = 0;
+        for(k=0;k<nc;k++){
+	  v = v + a[i][k]*b[k][j];
+	}
+	c[i][j] = v;
+       }
      }
-
-     for(i=0;i<nl;i++){
-       for(j=0;j<nz;j++){
-         int v = 0;
-         for(k=0;k<nc;k++){
-	   v = v + a[i][k]*b[k][j];
-	 }
-	 c[i][j] = v;
-        }
-      }
 
     /* Printa a matriz C */
     for(i=0;i<nl;i++){
       for(j=0;j<nz;j++){
-        printf("%d ", c[i][j]);
+        printf("%d, ", c[i][j]);
       }
       printf("\n");
     }
